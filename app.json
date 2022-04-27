@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "OxygenCalculator",
+    "slug": "OxygenCalculator",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
