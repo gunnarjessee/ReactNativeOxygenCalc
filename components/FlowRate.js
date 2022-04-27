@@ -43,11 +43,10 @@ const flowRateStyle = StyleSheet.create({
     },
     content: {
         color: "#AAA",
-
+        marginTop: "1rem"
     },
     inputText: {
         width: "50%",
-        marginTop: "1rem",
         color: "#FFF",
         textAlign: "center",
         fontSize: "1.2rem"

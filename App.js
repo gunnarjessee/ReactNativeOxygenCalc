@@ -16,13 +16,15 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    display: "flex",
+    display: "grid",
     margin: "auto",
+    gridTemplateRow: "5% 10% 25% 10%",
     justifyContent: "center",
     height: "100%",
     width: "100%",
     backgroundColor: '#00AAFF',
     alignItems: 'center',
+    justifyItems: 'center'
   },
   header: {
     marginTop: "2rem",
@@ -30,7 +32,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: "1.5rem",
     fontWeight: "bold",
-
 
   },
 });

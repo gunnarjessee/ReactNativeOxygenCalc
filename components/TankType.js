@@ -52,7 +52,7 @@ const tankStyle = StyleSheet.create({
         margin: "0",
         backgroundColor: "#004488",
         aspectRatio: "2/1",
-        width: "20%",
+        width: "10rem",
         display: "flex",
         margin: "auto",
         alignItems: "center",
