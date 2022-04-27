@@ -49,6 +49,7 @@ function TankType() {
 
 const tankStyle = StyleSheet.create({
     container: {
+        margin: "0",
         backgroundColor: "#004488",
         aspectRatio: "2/1",
         width: "20%",
