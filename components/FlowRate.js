@@ -7,14 +7,14 @@ function FlowRate() {
     const [getLiters, setLiters] = useState(0);
 
     function onO2changed(e) {
-
+        seto2(e)
     }
 
     return (
         <View style={flowRateStyle.container}>
-            <TextInput value={geto2} onChangeText={onO2changed}/>
-            <TextInput value={getLiters}/>
-            
+            <TextInput style={flowRateStyle.inputText} value={geto2} onChangeText={onO2changed}/>
+            <TextInput style={flowRateStyle.inputText} value={getLiters}/>
+
         </View>
     )
 }
@@ -22,9 +22,14 @@ function FlowRate() {
 const flowRateStyle = StyleSheet.create({
     container: {
         backgroundColor: "#004488",
-        aspectRatio: "19/9",
         width: "50%",
     },
+    inputText: {
+        marginTop: "1rem",
+        color: "#FFF",
+        textAlign: "center",
+        fontSize: "1.2rem"
+    }
 })
 
 export default FlowRate;

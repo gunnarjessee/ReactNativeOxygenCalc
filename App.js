@@ -16,10 +16,13 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    display: "flex",
+    margin: "auto",
+    justifyContent: "center",
+    height: "100%",
+    width: "100%",
     backgroundColor: '#00AAFF',
     alignItems: 'center',
-    justifyContent: 'center',
   },
   header: {
     marginTop: "2rem",

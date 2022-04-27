@@ -50,8 +50,8 @@ function TankType() {
 const tankStyle = StyleSheet.create({
     container: {
         backgroundColor: "#004488",
-        aspectRatio: "19/9",
-        width: "30%",
+        aspectRatio: "2/1",
+        width: "20%",
         display: "flex",
         margin: "auto",
         alignItems: "center",
