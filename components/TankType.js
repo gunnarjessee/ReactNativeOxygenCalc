@@ -31,7 +31,7 @@ function TankType() {
         const returnValue = []
         for (const tank in tankTypes) {
             returnValue.push(<Picker.Item label={tankTypes[tank]["name"]}
-                value={tank} key={tank}
+                value={tank} key={tank} style={tankStyle.pickerItem}
             />);
         }
         return returnValue;
@@ -66,6 +66,10 @@ const tankStyle = StyleSheet.create({
         textAlign: "center",
         fontSize: "1rem",
         fontWeight: "bold"
+    },
+
+    pickerItem: {
+        textAlign: "center",
     },
 
     picker: {
