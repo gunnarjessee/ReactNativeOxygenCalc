@@ -18,15 +18,16 @@ function OutputTime({currentTime}) {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: "#004488",
-        marginBottom: "4rem",
-        padding: "3rem",
+        marginBottom: 16,
+        padding: 10,
         color: "#FFF",
-        borderRadius: ".5rem"
+        borderRadius: 6,
+        alignItems: "center"
     },
     title: {
         color: "#CCCCCC",
         fontWeight: "bold",
-        fontSize: "1rem"
+        fontSize: 12
     },
     content: {
         textAlign: "center",

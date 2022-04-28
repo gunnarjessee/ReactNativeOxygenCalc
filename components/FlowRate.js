@@ -24,6 +24,7 @@ function FlowRate({updateCurrentFlow}) {
 
     return (
         <View style={flowRateStyle.container}>
+            <Text style={flowRateStyle.label}>Flow Rate</Text>
             <Text style={flowRateStyle.content}>FiO2</Text>
             <TextInput style={flowRateStyle.inputText} value={geto2} onChangeText={onO2changed}/>
             <Text style={flowRateStyle.content}>Liters/Minute</Text>
@@ -35,25 +36,27 @@ function FlowRate({updateCurrentFlow}) {
 
 const flowRateStyle = StyleSheet.create({
     container: {
-        margin: '0',
+        margin: 0,
         backgroundColor: "#004488",
-        padding: "3rem",
-        borderRadius: "2rem",
-        height: "14rem",
-        display: "grid",
-        gridTemplateRows: "2rem 3rem 2rem 3rem",
+        padding: 8,
+        borderRadius: 5,
         justifyContent: "center",
         justifyItems: "center"
     },
     content: {
         color: "#AAA",
-        marginTop: "1rem"
+        marginTop: 8
+    },
+    label: {
+        color: "#CCCCCC",
+        fontWeight: "bold",
+        fontSize: 12
     },
     inputText: {
-        width: "50%",
+        width: 50,
         color: "#FFF",
         textAlign: "center",
-        fontSize: "1.2rem"
+        fontSize: 16
     }
 })
 

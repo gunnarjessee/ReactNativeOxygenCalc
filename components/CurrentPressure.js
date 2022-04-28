@@ -9,7 +9,7 @@ function CurrentPressure({onPressureChange, currentPressure}) {
             <Text style={pressureStyle.title}>Current Pressure</Text>
             <TextInput onChangeText={onPressureChange} 
             value={currentPressure} style={pressureStyle.content}
-            placeholder={"Current Tank Pressure"}
+            placeholder={"Pressure"}
             ></TextInput>
         </View>
     );
@@ -19,22 +19,24 @@ function CurrentPressure({onPressureChange, currentPressure}) {
 const pressureStyle = StyleSheet.create({
     container: {
         backgroundColor: "#004488",
-        borderRadius: ".5rem",
-        marginTop: "4rem",
-        marginBottom: "4rem",
-        padding: "2rem",
-        textAlign: "center"
+        borderRadius: 5,
+        marginTop: 16,
+        marginBottom: 16,
+        padding: 16,
+        textAlign: "center",
+        alignItems: "center"
     },
     title: {
         color: "#CCCCCC",
         fontWeight: "bold",
-        fontSize: "1rem",
-        marginBottom: ".5rem"
+        fontSize: 12,
+        marginBottom: 4
     },
     content: {
         color: "#FFF",
         fontWeight: "bold",
-        textAlign: "center"
+        textAlign: "center",
+        width: 32
     }
 })
 

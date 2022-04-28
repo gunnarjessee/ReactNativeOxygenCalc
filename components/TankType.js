@@ -52,22 +52,22 @@ function TankType({onTankChanged}) {
 const tankStyle = StyleSheet.create({
     container: {
         margin: "0",
-        padding: "2rem",
+        padding: 16,
         backgroundColor: "#004488",
         margin: "auto",
         alignItems: "center",
-        marginTop: "2%",
-        paddingTop: "2%",
+        marginTop: 16,
+        paddingTop: 16,
         color: "#AAAAAA",
-        borderRadius: ".5rem",
-        marginTop: "4rem",
-        marginBottom: "2rem"
+        borderRadius: 5,
+        marginTop: 16,
+        marginBottom: 8
     },
     
     title: {
         color: "#CCCCCC",
         textAlign: "center",
-        fontSize: "1rem",
+        fontSize: 12,
         fontWeight: "bold"
     },
 
@@ -76,7 +76,7 @@ const tankStyle = StyleSheet.create({
     },
 
     picker: {
-        marginTop: ".5rem"
+        marginTop: 8
     }
 
 });
