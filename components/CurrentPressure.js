@@ -2,14 +2,15 @@ import { View, Text, TextInput, StyleSheet } from "react-native";
 
 
 // Requires a current pressure
-function CurrentPressure(props) {
-
-    const pressure = props
+function CurrentPressure({onPressureChange, currentPressure}) {
 
     return (
         <View style={pressureStyle.container}>
             <Text style={pressureStyle.title}>Current Pressure</Text>
-            <TextInput onTextChange={pressure} value='0' style={pressureStyle.content}></TextInput>
+            <TextInput onChangeText={onPressureChange} 
+            value={currentPressure} style={pressureStyle.content}
+            placeholder={"Current Tank Pressure"}
+            ></TextInput>
         </View>
     );
 

@@ -1,31 +1,33 @@
-import { LogBox, Picker, StyleSheet, Text, View } from "react-native-web";
+import { LogBox, Picker, StyleSheet, Text, View } from "react-native";
 
+//Minutes remaining = PSIG * Tank conversion factor/Flow rate
 const tankTypes = {
     ['k-tank']: {
         'name': "K Tank",
-        'constant': "",
+        'constant': "3.14",
         'psi': ""
     },
     ['d-tank']: {
         'name': "D Tank",
-        'constant': "",
+        'constant': "0.16",
         'psi': ""
     },
     ['h-tank']: {
         'name': "H Tank",
-        'constant': "",
+        'constant': "3.14",
         'psi': ""
     },
     ['m-tank']: {
         'name': "M Tank",
-        'constant': "",
+        'constant': ".05",
         'psi': ""
     }
 }
 
 
 // This is a view for react
-function TankType() {
+function TankType({onTankChanged}) {
+
 
     function getTanks() {
         const returnValue = []
@@ -40,7 +42,7 @@ function TankType() {
     return (
         <View style={tankStyle.container}>
             <Text style={tankStyle.title}>Tank Type</Text>
-            <Picker style={tankStyle.picker}>
+            <Picker style={tankStyle.picker} onValueChange={(itemValue, itemIndex) => onTankChanged(itemValue, tankTypes)}>
                 {getTanks()}
             </Picker>
         </View>
@@ -50,10 +52,8 @@ function TankType() {
 const tankStyle = StyleSheet.create({
     container: {
         margin: "0",
+        padding: "2rem",
         backgroundColor: "#004488",
-        aspectRatio: "2/1",
-        width: "10rem",
-        display: "flex",
         margin: "auto",
         alignItems: "center",
         marginTop: "2%",

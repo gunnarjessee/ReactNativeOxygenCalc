@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Text, TextInput, View } from "react-native";
 import { StyleSheet } from "react-native-web";
 
-function FlowRate() {
+function FlowRate({updateCurrentFlow}) {
     const [geto2, seto2] = useState(21);
     const [getLiters, setLiters] = useState(0);
 
@@ -12,12 +12,14 @@ function FlowRate() {
         seto2(e)
         var result = (e - o2Constant) / 4
         setLiters(result)
+        updateCurrentFlow(getLiters)
     }
 
     function onLitersChanged(e) {
         setLiters(e)
         var result = (4 * e) + o2Constant
         seto2(result)
+        updateCurrentFlow(e)
     }
 
     return (
