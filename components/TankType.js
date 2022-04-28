@@ -59,7 +59,9 @@ const tankStyle = StyleSheet.create({
         marginTop: "2%",
         paddingTop: "2%",
         color: "#AAAAAA",
-        borderRadius: "5%"
+        borderRadius: ".5rem",
+        marginTop: "4rem",
+        marginBottom: "2rem"
     },
     
     title: {

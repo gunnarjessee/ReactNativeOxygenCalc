@@ -1,30 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import CurrentPressure from './components/CurrentPressure';
 import FlowRate from './components/FlowRate';
 import TankType from './components/TankType';
+import OutputTime from './components/OutputTime';
 
 export default function App() {
+
+  function onPressureChange() {
+
+  }
+
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Gunnar's Oxygen Calculator</Text>
+      <Text style={styles.header}>Oxygen Calculator</Text>
       <TankType/>
       <FlowRate/>
+      <CurrentPressure pressure={onPressureChange}></CurrentPressure>
+      <OutputTime/>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    display: "grid",
+    display: "flex",
     margin: "auto",
-    gridTemplateRow: "5% 10% 25% 10%",
     justifyContent: "center",
     height: "100%",
     width: "100%",
     backgroundColor: '#00AAFF',
     alignItems: 'center',
-    justifyItems: 'center'
   },
   header: {
     marginTop: "2rem",
@@ -32,6 +38,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: "1.5rem",
     fontWeight: "bold",
+
 
   },
 });
