@@ -1,4 +1,5 @@
 import { LogBox, Picker, StyleSheet, Text, View } from "react-native";
+import AppStyles from "../AppStyles";
 
 //Minutes remaining = PSIG * Tank conversion factor/Flow rate
 const tankTypes = {
@@ -33,52 +34,20 @@ function TankType({onTankChanged}) {
         const returnValue = []
         for (const tank in tankTypes) {
             returnValue.push(<Picker.Item label={tankTypes[tank]["name"]}
-                value={tank} key={tank} style={tankStyle.pickerItem}
+                value={tank} key={tank} style={AppStyles.pickerItem}
             />);
         }
         return returnValue;
     }
 
     return (
-        <View style={tankStyle.container}>
-            <Text style={tankStyle.title}>Tank Type</Text>
-            <Picker style={tankStyle.picker} onValueChange={(itemValue, itemIndex) => onTankChanged(itemValue, tankTypes)}>
+        <View style={AppStyles.card}>
+            <Text style={AppStyles.title}>Tank Type</Text>
+            <Picker style={AppStyles.picker} onValueChange={(itemValue, itemIndex) => onTankChanged(itemValue, tankTypes)}>
                 {getTanks()}
             </Picker>
         </View>
     );
 }
-
-const tankStyle = StyleSheet.create({
-    container: {
-        margin: "0",
-        padding: 16,
-        backgroundColor: "#004488",
-        margin: "auto",
-        alignItems: "center",
-        marginTop: 16,
-        paddingTop: 16,
-        color: "#AAAAAA",
-        borderRadius: 5,
-        marginTop: 16,
-        marginBottom: 8
-    },
-    
-    title: {
-        color: "#CCCCCC",
-        textAlign: "center",
-        fontSize: 12,
-        fontWeight: "bold"
-    },
-
-    pickerItem: {
-        textAlign: "center",
-    },
-
-    picker: {
-        marginTop: 8
-    }
-
-});
 
 export default TankType;

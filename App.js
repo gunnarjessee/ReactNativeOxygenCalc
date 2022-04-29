@@ -9,8 +9,6 @@ import AppStyles from './AppStyles';
 // Minutes remaining = PSIG * Tank conversion factor/Flow rate
 export default function App() {
 
-  const appStyle = reqire('./AppStyles')
-
   // will be in time formate
   const [currentTime, setTime] = useState(0);
   const [currentPressure, setPressure] = useState(0);
@@ -48,8 +46,12 @@ export default function App() {
   }
 
   return (
-    <View style={appStyle.container}>
-      <Text style={appStyle.header}>Oxygen Calculator</Text>
+    <View style={AppStyles.container}>
+      <Text style={AppStyles.header}>Oxygen Calculator</Text>
+      <TankType onTankChanged={onTankChanged}/>
+      <FlowRate updateCurrentFlow={updateCurrentFlow}/>
+      <CurrentPressure onPressureChange={onPressureChange} currentPressure={currentPressure}/>
+      <OutputTime currentTime={currentTime}/>
     </View>
   );
 }

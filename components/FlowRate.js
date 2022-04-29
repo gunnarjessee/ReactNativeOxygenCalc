@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Text, TextInput, View } from "react-native";
 import { StyleSheet } from "react-native-web";
+import AppStyles from "../AppStyles";
 
 function FlowRate({updateCurrentFlow}) {
     const [geto2, seto2] = useState(21);
@@ -23,41 +24,15 @@ function FlowRate({updateCurrentFlow}) {
     }
 
     return (
-        <View style={flowRateStyle.container}>
-            <Text style={flowRateStyle.label}>Flow Rate</Text>
-            <Text style={flowRateStyle.content}>FiO2</Text>
-            <TextInput style={flowRateStyle.inputText} value={geto2} onChangeText={onO2changed}/>
-            <Text style={flowRateStyle.content}>Liters/Minute</Text>
-            <TextInput style={flowRateStyle.inputText} value={getLiters} onChangeText={onLitersChanged}/>
+        <View style={AppStyles.card}>
+            <Text style={AppStyles.title}>Flow Rate</Text>
+            <Text style={AppStyles.content}>FiO2</Text>
+            <TextInput style={AppStyles.textInput} value={geto2} onChangeText={onO2changed}/>
+            <Text style={AppStyles.content}>Liters/Minute</Text>
+            <TextInput style={AppStyles.textInput} value={getLiters} onChangeText={onLitersChanged}/>
             
         </View>
     )
 }
-
-const flowRateStyle = StyleSheet.create({
-    container: {
-        margin: 0,
-        backgroundColor: "#004488",
-        padding: 8,
-        borderRadius: 5,
-        justifyContent: "center",
-        justifyItems: "center"
-    },
-    content: {
-        color: "#AAA",
-        marginTop: 8
-    },
-    label: {
-        color: "#CCCCCC",
-        fontWeight: "bold",
-        fontSize: 12
-    },
-    inputText: {
-        width: 50,
-        color: "#FFF",
-        textAlign: "center",
-        fontSize: 16
-    }
-})
 
 export default FlowRate;
