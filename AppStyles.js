@@ -7,7 +7,8 @@ export default StyleSheet.create({
             backgroundColor: "#00CCFF",
             textAlign: "center",
             justifyContent: "center",
-            alignItems: "center"
+            alignItems: "center",
+            height: "100%"
         },
 
         card: {
@@ -15,7 +16,7 @@ export default StyleSheet.create({
             padding: 16,
             borderRadius: 8,
             margin: 0,
-            marginTop: 64,
+            marginTop: 32,
 
         },
 
@@ -59,7 +60,7 @@ export default StyleSheet.create({
             padding: 16,
             borderRadius: 8,
             margin: 0,
-            marginTop: 64,
+            marginTop: 32,
         }
 
     });
