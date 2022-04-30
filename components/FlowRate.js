@@ -7,7 +7,7 @@ function FlowRate({updateCurrentFlow}) {
     const [geto2, seto2] = useState(21);
     const [getLiters, setLiters] = useState(0);
 
-    const o2Constant = 21
+    const o2Constant = 21 // atmospheric oxygen
 
     function onO2changed(e) {
         seto2(e)

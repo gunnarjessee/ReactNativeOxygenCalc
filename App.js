@@ -10,26 +10,25 @@ import AppStyles from './AppStyles';
 export default function App() {
 
   // will be in time formate
-  const [currentTime, setTime] = useState(0);
-  const [currentPressure, setPressure] = useState(0);
-  const [currentFlow, setFlow] = useState(0);
-  const [currentO2Constant, setConstant] = useState(0)
+  const [currentTime, setTime] = useState(0); // output
+  const [currentPressure, setPressure] = useState(0); // current guage pressure
+  const [currentFlow, setFlow] = useState(0); // rate of flow
+  const [currentO2Constant, setConstant] = useState(0) // contant of o2 tank
   
   function updateTime() {
-    console.log("-------");
-    console.log(currentFlow + " flow");
-    console.log(currentO2Constant + " constant");
-    console.log(currentPressure + " pressure");
 
-    console.log("-------");
-    var calc = (parseInt(currentPressure) * parseInt(currentO2Constant)) / parseInt(currentFlow);
-    setTime(calc);
-    console.log(calc);
+    var step0 = 1800 * 0.16;
+    console.log(step0);
+    var step1 = step0 / 6.0;
+    console.log(step1);
+    console.log("current constant: " + currentO2Constant);
+    setTime(Math.round(step1));
   }
 
   function updateCurrentFlow(liters) {
     setFlow(liters);
-    console.log('current flow '+ currentFlow)
+    console.log('current flow '+ currentFlow);
+    updateTime();
   }
 
   // when current pressure is changed
@@ -40,8 +39,6 @@ export default function App() {
 
   function onTankChanged(tankSelected, tankData) {
     setConstant(tankData[tankSelected]['constant']);
-    console.log("new constant " + currentO2Constant);
-    
     updateTime();
   }
 
@@ -52,6 +49,18 @@ export default function App() {
       <FlowRate updateCurrentFlow={updateCurrentFlow}/>
       <CurrentPressure onPressureChange={onPressureChange} currentPressure={currentPressure}/>
       <OutputTime currentTime={currentTime}/>
+      <Text>Flow:{currentFlow} Constant:{currentO2Constant} Pressure:{currentPressure}</Text>
     </View>
   );
 }
+
+/*
+  TODO
+
+  -fix o2 calculation for duration
+  -fix input on current pressure and flow. it never recongnizes the first typed letter
+  -fix android sizing and drop down for the tank
+
+  + edit styling, looks goofy, needs a modern touch
+
+*/ 
