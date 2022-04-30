@@ -1,4 +1,5 @@
-import { LogBox, Picker, StyleSheet, Text, View } from "react-native";
+import { LogBox, StyleSheet, Text, View } from "react-native";
+import {Picker} from '@react-native-picker/picker'
 import AppStyles from "../AppStyles";
 
 //Minutes remaining = PSIG * Tank conversion factor/Flow rate
