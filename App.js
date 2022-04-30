@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import CurrentPressure from './components/CurrentPressure';
 import FlowRate from './components/FlowRate';
@@ -22,25 +22,26 @@ export default function App() {
     var step1 = (step0) / parseFloat(currentFlow);
     console.log(step1);
     console.log("current constant: " + currentO2Constant);
-    setTime(() => (step1*10));
+    setTime(() => Math.round(step1));
   }
 
   function updateCurrentFlow(liters) {
     setFlow(() => liters);
     console.log('current flow '+ currentFlow);
-    updateTime();
   }
 
   // when current pressure is changed
   function onPressureChange(e) {
     setPressure(() => e);
-    updateTime();
   }
 
   function onTankChanged(tankSelected, tankData) {
     setConstant(() => tankData[tankSelected]['constant']);
-    updateTime();
   }
+
+  useEffect(() => {
+    updateTime()
+  }, [currentFlow, currentO2Constant, currentPressure])
 
   return (
     <View style={AppStyles.container}>

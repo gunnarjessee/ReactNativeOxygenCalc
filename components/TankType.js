@@ -20,7 +20,7 @@ const tankTypes = {
     },
     ['m-tank']: {
         'name': "M Tank",
-        'constant': ".05",
+        'constant': "1.56",
         'psi': ""
     }
 }
