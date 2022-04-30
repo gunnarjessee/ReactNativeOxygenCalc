@@ -17,28 +17,28 @@ export default function App() {
   
   function updateTime() {
 
-    var step0 = 1800 * 0.16;
+    var step0 = currentPressure * currentO2Constant;
     console.log(step0);
-    var step1 = step0 / 6.0;
+    var step1 = (step0) / parseFloat(currentFlow);
     console.log(step1);
     console.log("current constant: " + currentO2Constant);
-    setTime(Math.round(step1));
+    setTime(() => (step1*10));
   }
 
   function updateCurrentFlow(liters) {
-    setFlow(liters);
+    setFlow(() => liters);
     console.log('current flow '+ currentFlow);
     updateTime();
   }
 
   // when current pressure is changed
   function onPressureChange(e) {
-    setPressure(e);
+    setPressure(() => e);
     updateTime();
   }
 
   function onTankChanged(tankSelected, tankData) {
-    setConstant(tankData[tankSelected]['constant']);
+    setConstant(() => tankData[tankSelected]['constant']);
     updateTime();
   }
 
@@ -56,9 +56,8 @@ export default function App() {
 
 /*
   TODO
-
+  -fix updating time left calculation due to not all varibles are being updated
   -fix o2 calculation for duration
-  -fix input on current pressure and flow. it never recongnizes the first typed letter
   -fix android sizing and drop down for the tank
 
   + edit styling, looks goofy, needs a modern touch

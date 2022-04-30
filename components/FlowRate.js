@@ -10,16 +10,16 @@ function FlowRate({updateCurrentFlow}) {
     const o2Constant = 21 // atmospheric oxygen
 
     function onO2changed(e) {
-        seto2(e)
+        seto2(() => e)
         var result = (e - o2Constant) / 4
-        setLiters(result)
-        updateCurrentFlow(getLiters)
+        setLiters(() => result)
+        updateCurrentFlow(result)
     }
 
     function onLitersChanged(e) {
-        setLiters(e)
+        setLiters(() => e)
         var result = (4 * e) + o2Constant
-        seto2(result)
+        seto2(() => result)
         updateCurrentFlow(e)
     }
 
