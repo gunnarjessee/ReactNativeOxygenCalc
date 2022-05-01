@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Text, TextInput, View } from "react-native";
 import { StyleSheet } from "react-native-web";
 import AppStyles from "../AppStyles";
@@ -9,18 +9,24 @@ function FlowRate({updateCurrentFlow}) {
 
     const o2Constant = 21 // atmospheric oxygen
 
+    useEffect(() => {
+        var result = (geto2 - o2Constant) / 4;
+        setLiters(() => result);
+        updateCurrentFlow(result);
+    }, [geto2]);
+
+    useEffect(() => {
+        var result = (4 * getLiters) + o2Constant
+        seto2(() => result)
+        updateCurrentFlow(getLiters);
+    }, [getLiters]);
+
     function onO2changed(e) {
-        seto2(() => e)
-        var result = (e - o2Constant) / 4
-        setLiters(() => result)
-        updateCurrentFlow(result)
+        seto2(() => e);
     }
 
     function onLitersChanged(e) {
         setLiters(() => e)
-        var result = (4 * e) + o2Constant
-        seto2(() => result)
-        updateCurrentFlow(e)
     }
 
     return (
