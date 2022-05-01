@@ -48,9 +48,9 @@ export default function App() {
       <Text style={AppStyles.header}>Oxygen Calculator</Text>
       <TankType onTankChanged={onTankChanged}/>
       <FlowRate updateCurrentFlow={updateCurrentFlow}/>
-      <CurrentPressure onPressureChange={onPressureChange} currentPressure={currentPressure}/>
+
+'      <CurrentPressure onPressureChange={onPressureChange} currentPressure={currentPressure}/>
       <OutputTime currentTime={currentTime}/>
-      <Text>Flow:{currentFlow} Constant:{currentO2Constant} Pressure:{currentPressure}</Text>
     </View>
   );
 }

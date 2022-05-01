@@ -4,6 +4,11 @@ import AppStyles from "../AppStyles";
 
 //Minutes remaining = PSIG * Tank conversion factor/Flow rate
 const tankTypes = {
+    ['select-tank']: {
+        'name': "...",
+        'constant': "",
+        'psi': ""
+    },
     ['k-tank']: {
         'name': "K Tank",
         'constant': "3.14",
