@@ -30,12 +30,14 @@ function FlowRate({updateCurrentFlow}) {
     }
 
     return (
-        <View style={AppStyles.card}>
-            <Text style={AppStyles.title}>Flow Rate</Text>
-            <Text style={AppStyles.content}>FiO2</Text>
-            <TextInput style={AppStyles.textInput} value={geto2} onChangeText={onO2changed}/>
-            <Text style={AppStyles.content}>Liters/Minute</Text>
-            <TextInput style={AppStyles.textInput} value={getLiters} onChangeText={onLitersChanged}/>
+        <View style={   AppStyles.card  }>
+            <Text style={   AppStyles.title }>Flow Rate</Text>
+            <Text style={   AppStyles.content  }>FiO2</Text>
+            <TextInput style={  AppStyles.textInput } value={   (geto2.toString())   } 
+            onChangeText={    onO2changed } keyboardType="numeric"/>
+            <Text style={   AppStyles.content   }>Liters/Minute</Text>
+            <TextInput style={  AppStyles.textInput   } value={  (getLiters.toString()) } 
+            onChangeText={  onLitersChanged } keyboardType="numeric"/>
             
         </View>
     )

@@ -49,8 +49,11 @@ export default function App() {
       <TankType onTankChanged={onTankChanged}/>
       <FlowRate updateCurrentFlow={updateCurrentFlow}/>
 
-'      <CurrentPressure onPressureChange={onPressureChange} currentPressure={currentPressure}/>
+      <CurrentPressure onPressureChange={onPressureChange} currentPressure={currentPressure}/>
       <OutputTime currentTime={currentTime}/>
+      <Text>Flow:{ currentFlow }, Pressure:{currentPressure}, Constant:{currentO2Constant}</Text>
+
+      <Text>By Gunnar Jessee</Text>
     </View>
   );
 }

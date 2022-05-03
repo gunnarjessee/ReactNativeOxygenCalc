@@ -6,11 +6,11 @@ import AppStyles from "../AppStyles";
 function CurrentPressure({onPressureChange, currentPressure}) {
 
     return (
-        <View style={AppStyles.card}>
-            <Text style={AppStyles.title}>Current Pressure</Text>
-            <TextInput onChangeText={onPressureChange} 
-            value={currentPressure} style={AppStyles.textInput}
-            placeholder={"Pressure"}
+        <View style={   AppStyles.card }>
+            <Text style={   AppStyles.title }>Current Pressure</Text>
+            <TextInput onChangeText={   onPressureChange    } 
+            value={ currentPressure.toString()  } style={AppStyles.textInput}
+            placeholder={"Pressure"} keyboardType="numeric"
             ></TextInput>
         </View>
     );
