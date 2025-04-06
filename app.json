@@ -5,6 +5,12 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "android": {
+      "package": "net.heroesafety.oxygencalculator"
+    },
+    "ios": {
+      "bundleIdentifier": "net.heroesafety.oxygencalculator"
+    }
   }
 }
