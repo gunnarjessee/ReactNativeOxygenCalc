@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Text, TextInput, View } from "react-native";
-import { StyleSheet } from "react-native-web";
 import AppStyles from "../AppStyles";
 
 function FlowRate({updateCurrentFlow}) {
@@ -30,15 +29,28 @@ function FlowRate({updateCurrentFlow}) {
     }
 
     return (
-        <View style={   AppStyles.card  }>
-            <Text style={   AppStyles.title }>Flow Rate</Text>
-            <Text style={   AppStyles.content  }>FiO2</Text>
-            <TextInput style={  AppStyles.textInput } value={   (geto2.toString())   } 
-            onChangeText={    onO2changed } keyboardType="numeric"/>
-            <Text style={   AppStyles.content   }>Liters/Minute</Text>
-            <TextInput style={  AppStyles.textInput   } value={  (getLiters.toString()) } 
-            onChangeText={  onLitersChanged } keyboardType="numeric"/>
+        <View style={AppStyles.inputContainer}>
+            <View style={{ marginBottom: 16 }}>
+                <Text style={AppStyles.label}>FiO2 (%)</Text>
+                <TextInput 
+                    style={AppStyles.textInput}
+                    value={geto2.toString()}
+                    onChangeText={onO2changed}
+                    keyboardType="numeric"
+                    placeholder="Enter FiO2"
+                />
+            </View>
             
+            <View>
+                <Text style={AppStyles.label}>Liters/Minute</Text>
+                <TextInput 
+                    style={AppStyles.textInput}
+                    value={getLiters.toString()}
+                    onChangeText={onLitersChanged}
+                    keyboardType="numeric"
+                    placeholder="Enter flow rate"
+                />
+            </View>
         </View>
     )
 }

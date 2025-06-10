@@ -1,6 +1,7 @@
 import { LogBox, StyleSheet, Text, View } from "react-native";
 import {Picker} from '@react-native-picker/picker'
 import AppStyles from "../AppStyles";
+import { useState } from "react";
 
 //Minutes remaining = PSIG * Tank conversion factor/Flow rate
 const tankTypes = {
@@ -34,22 +35,32 @@ const tankTypes = {
 
 // This is a view for react
 function TankType({onTankChanged}) {
-
+    const [selectedTank, setSelectedTank] = useState('k-tank');
 
     function getTanks() {
-        const returnValue = []
-        for (const tank in tankTypes) {
-            returnValue.push(<Picker.Item label={tankTypes[tank]["name"]}
-                value={tank} key={tank} style={AppStyles.pickerItem}
-            />);
-        }
-        return returnValue;
+        return Object.entries(tankTypes).map(([key, tank]) => (
+            <Picker.Item 
+                label={tank.name}
+                value={key} 
+                key={key} 
+                style={AppStyles.pickerItem}
+            />
+        ));
     }
 
+    const handleTankChange = (itemValue) => {
+        setSelectedTank(itemValue);
+        onTankChanged(itemValue, tankTypes);
+    };
+
     return (
-        <View style={AppStyles.card}>
-            <Text style={AppStyles.title}>Tank Type</Text>
-            <Picker style={AppStyles.picker} onValueChange={(itemValue, itemIndex) => onTankChanged(itemValue, tankTypes)}>
+        <View style={AppStyles.inputContainer}>
+            <Text style={AppStyles.label}>Select Tank Type</Text>
+            <Picker 
+                selectedValue={selectedTank}
+                onValueChange={handleTankChange}
+                style={AppStyles.picker}
+            >
                 {getTanks()}
             </Picker>
         </View>
