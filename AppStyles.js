@@ -4,7 +4,7 @@ const { width } = Dimensions.get('window');
 const CARD_PADDING = 16;
 
 // Color palette
-const COLORS = {
+export const COLORS = {
     primary: '#2563EB',      // Vibrant blue
     primaryLight: '#DBEAFE', // Light blue background
     secondary: '#0F766E',    // Teal
@@ -22,7 +22,38 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: COLORS.background,
-        alignItems: "center",
+    },
+
+    tabContainer: {
+        flex: 1,
+    },
+
+    tabBar: {
+        flexDirection: 'row',
+        backgroundColor: COLORS.card,
+        borderBottomWidth: 1,
+        borderBottomColor: COLORS.border,
+        paddingTop: 8,
+    },
+
+    tabButton: {
+        flex: 1,
+        paddingVertical: 12,
+        textAlign: 'center',
+        fontSize: 16,
+        fontWeight: '500',
+        color: COLORS.textLight,
+    },
+
+    tabButtonActive: {
+        color: COLORS.primary,
+        fontWeight: '600',
+        borderBottomWidth: 2,
+        borderBottomColor: COLORS.primary,
+    },
+
+    pagerView: {
+        flex: 1,
     },
 
     header: {
